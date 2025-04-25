@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: argo-test-container
-          image: <your-username>/argo-test-app:latest
+          image: sova/argo-test-app:latest
           ports:
             - containerPort: 80
