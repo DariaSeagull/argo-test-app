@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argo-test-app
+  labels:
+    app: argo-test-app
+  annotations:
+    ignore-me: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: argo-test-app
+  template:
+    metadata:
+      labels:
+        app: argo-test-app
+    spec:
+      containers:
+        - name: argo-test-container
+          image: <your-username>/argo-test-app:latest
+          ports:
+            - containerPort: 80
